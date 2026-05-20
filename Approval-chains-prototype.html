@@ -544,7 +544,7 @@
   .detail-grid {
     display: grid;
     grid-template-columns: 280px 1fr 320px;
-    gap: 20px;
+    gap: 24px;
     align-items: flex-start;
   }
   .back-link {
@@ -552,7 +552,7 @@
     text-decoration: none;
     font-size: 14px;
     display: inline-flex; align-items: center; gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   .detail-rail h3 {
     font-size: 14px; font-weight: 700;
@@ -1164,12 +1164,13 @@
 
   /* ====== Approval Chains List — redesigned ====== */
 
-  .ac-page-header {
-    display: flex; align-items: flex-start; justify-content: space-between;
-    margin-bottom: 24px; gap: 24px;
+  .ac-page-header { margin-bottom: 24px; }
+  .ac-page-header-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-bottom: 6px;
   }
-  .ac-page-header h2 { margin: 0 0 4px 0; font-size: 18px; font-weight: 700; }
-  .ac-page-header .ac-desc { color: var(--text-secondary); font-size: 13.5px; max-width: 560px; }
+  .ac-page-header h2 { margin: 0; font-size: 18px; font-weight: 700; }
+  .ac-page-header .ac-desc { color: var(--text-secondary); font-size: 13.5px; line-height: 1.55; }
   .ac-summary-stat {
     display: flex; align-items: center; gap: 6px; flex-shrink: 0;
     background: var(--neutral-bg);
@@ -1192,7 +1193,7 @@
     display: grid;
     grid-template-columns: 1.5fr 160px 1fr 96px;
     gap: 16px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     background: #f9fafb;
     border-bottom: 1px solid var(--border);
   }
@@ -1205,7 +1206,7 @@
     display: grid;
     grid-template-columns: 1.5fr 160px 1fr 96px;
     gap: 16px;
-    padding: 16px 20px;
+    padding: 18px 20px;
     align-items: center;
     border-bottom: 1px solid var(--border);
     transition: background .12s;
@@ -1355,22 +1356,22 @@
   .approval-view-toggle {
     display: inline-flex;
     background: var(--neutral-bg);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     border-radius: var(--radius);
     padding: 3px;
     gap: 2px;
-    margin-bottom: 24px;
+    align-items: center;
   }
   .av-tab {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 8px 16px;
+    gap: 6px;
+    padding: 5px 12px;
     border-radius: calc(var(--radius) - 2px);
     border: none;
     background: transparent;
     color: var(--text-secondary);
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-weight: 500;
     cursor: pointer;
     transition: all .15s;
@@ -1407,7 +1408,7 @@
     background: linear-gradient(135deg, #f5f8ff 0%, #eef3ff 100%);
     border: 1px solid #c7d8ff;
     border-radius: var(--radius-lg);
-    margin-top: 16px;
+    margin-top: 20px;
   }
   .upsell-icon-wrap {
     width: 48px;
@@ -1651,6 +1652,19 @@
       <div class="title" id="topbar-title">Job requisition approvals</div>
       <div class="topbar-right">
 
+        <!-- Approval plan toggle — workspace-level control -->
+        <div class="approval-view-toggle">
+          <button class="av-tab active" onclick="setApprovalView('standard')" id="avtab-standard">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Standard
+          </button>
+          <button class="av-tab" onclick="setApprovalView('booked')" id="avtab-booked">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Booked
+            <span class="av-tab-badge">Active</span>
+          </button>
+        </div>
+
         <!-- Global admin mode toggle (icon-based) -->
         <div class="admin-mode-toggle">
           <button class="amt-btn active" onclick="setAdminMode(false)" id="amtbtn-user" title="Without Admin Access">
@@ -1704,31 +1718,18 @@
           <a href="#">Rejection Reasons</a>
         </nav>
 
-        <!-- Approval plan toggle — settings page only -->
-        <div class="approval-view-toggle" style="margin-bottom: 24px;">
-          <button class="av-tab active" onclick="setApprovalView('standard')" id="avtab-standard">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            Standard Approval
-          </button>
-          <button class="av-tab" onclick="setApprovalView('booked')" id="avtab-booked">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Booked Approval
-            <span class="av-tab-badge">Active</span>
-          </button>
-        </div>
-
         <!-- ===== VIEW: Standard Approval (default — no customization booked) ===== -->
         <div id="view-standard">
 
           <div class="ac-page-header">
-            <div>
+            <div class="ac-page-header-row">
               <h2>Approval Chain</h2>
-              <div class="ac-desc">One approval chain applies to all requisitions. Assign who must approve before a requisition moves to recruiting. The requisition form itself is maintained by your softgarden team.</div>
+              <div class="ac-summary-stat" style="background: var(--info-bg); border-color: #c7d8ff; color: var(--primary);">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Standard plan
+              </div>
             </div>
-            <div class="ac-summary-stat" style="background: var(--info-bg); border-color: #c7d8ff; color: var(--primary);">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              Standard plan
-            </div>
+            <div class="ac-desc">One approval chain applies to all requisitions. Assign who must approve before a requisition moves to recruiting. The requisition form itself is set up and maintained by your softgarden team.</div>
           </div>
 
           <div class="ac-list">
@@ -1824,14 +1825,14 @@
         <div id="view-booked" style="display:none;">
 
           <div class="ac-page-header">
-            <div>
+            <div class="ac-page-header-row">
               <h2>Approval Chains</h2>
-              <div class="ac-desc">Assign approvers to each requisition form below. Form structure is set up and maintained by your softgarden team — only the approval chain assignments are configurable here. Changes apply to future requisitions only.</div>
+              <div class="ac-summary-stat">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                <strong>2</strong> of 3 forms configured
+              </div>
             </div>
-            <div class="ac-summary-stat">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              <strong>2</strong> of 3 forms configured
-            </div>
+            <div class="ac-desc">Assign approvers to each requisition form below. Form structure is set up and maintained by your softgarden team — only the approval chain assignments are configurable here. Changes apply to future requisitions only.</div>
           </div>
 
           <div class="ac-list">
