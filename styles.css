@@ -1206,7 +1206,7 @@
   .ac-row:last-child { border-bottom: none; }
   .ac-row:hover { background: #fafbfc; }
   .ac-row:hover .ac-edit-btn { opacity: 1; }
-  .ac-row.selected { background: var(--info-bg); }
+
 
   /* Col 1 — form name */
   .ac-form-name { font-size: 14px; font-weight: 600; color: var(--text); }

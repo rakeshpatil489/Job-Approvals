@@ -24,7 +24,7 @@
   const tourSteps = [
     {
       page: 'settings',
-      name: 'Case 1 — Admin: Configure approval chain',
+      name: 'Step 1 — Admin: Configure settings page',
       desc: 'Set up a sequential or alternative chain on a requisition form template'
     },
     {
@@ -58,7 +58,7 @@
       desc: 'Complete chain history and audit trail'
     }
   ];
-  let tourIdx = 1; // start at list view
+  let tourIdx = 0;
 
   function renderTour() {
     document.getElementById('tour-step-name').textContent = tourSteps[tourIdx].name;
