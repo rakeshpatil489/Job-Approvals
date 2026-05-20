@@ -381,13 +381,14 @@
             <div>REQUESTER</div>
             <div>APPROVING</div>
             <div>PROGRESS</div>
+            <div>STATUS</div>
           </div>
 
           <!-- Row 1: Sequential — step 2 of 3, in-progress -->
           <div class="list-row" onclick="goPage('detail-seq')">
             <div>
-              <div class="pos-title">Senior iOS Engineer</div>
-              <div class="pos-meta">Engineering · Luxus GmbH</div>
+              <div class="pos-title">Senior Software Developer</div>
+              <div class="pos-meta">Luxus GmbH</div>
             </div>
             <div class="approving-cell">
               <div class="av av-rk av-26">RA</div>
@@ -399,7 +400,7 @@
               <div class="av av-ak av-26">AK</div>
               <div class="cell-info">
                 <div class="cell-name">Adrian-D. Kodja</div>
-                <div class="cell-role">Dept Head · Step 2</div>
+                <div class="cell-role">Step 2</div>
               </div>
             </div>
             <div class="progress-cell">
@@ -410,15 +411,16 @@
                 <span class="conn pending"></span>
                 <span class="dot pending"></span>
               </span>
-              <span class="progress-status">Step 2 of 3 · <strong>In Progress</strong></span>
+              <span class="progress-status">Sequence 2 of 3</span>
             </div>
+            <div><span class="pill pill-pending">Pending</span></div>
           </div>
 
           <!-- Row 2: Alternative — your turn -->
           <div class="list-row yours" onclick="goPage('detail-alt')">
             <div>
-              <div class="pos-title">Senior Vibes Manager<span class="your-turn-tag"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="5 12 12 19 19 12"/></svg>Your turn</span></div>
-              <div class="pos-meta">Operations · DemoCompany</div>
+              <div class="pos-title">Senior Test Engineer (w/m/f)<span class="your-turn-tag"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="5 12 12 19 19 12"/></svg>Your turn</span></div>
+              <div class="pos-meta">DemoCompany</div>
             </div>
             <div class="approving-cell">
               <div class="av av-sg av-26">SG</div>
@@ -445,8 +447,9 @@
                 <span class="alt-slash">/</span>
                 <span class="dot current"></span>
               </span>
-              <span class="progress-status">Alternative · <strong>Pending</strong></span>
+              <span class="progress-status">Alternative</span>
             </div>
+            <div><span class="pill pill-pending">Pending</span></div>
           </div>
 
           <!-- Row 3: Single approver — overdue -->
@@ -472,8 +475,9 @@
               <span class="abacus">
                 <span class="dot current"></span>
               </span>
-              <span class="progress-status red"><strong>Overdue</strong> · 6 days waiting</span>
+              <span class="progress-status">Single approver</span>
             </div>
+            <div><span class="pill pill-pending">Pending</span></div>
           </div>
 
           <!-- Row 4: Sequential — fully approved -->
@@ -503,8 +507,9 @@
                 <span class="conn"></span>
                 <span class="dot done"></span>
               </span>
-              <span class="progress-status green"><strong>Approved</strong> · All 3 steps</span>
+              <span class="progress-status">Sequence 3 of 3</span>
             </div>
+            <div><span class="pill pill-approved">Approved</span></div>
           </div>
 
           <!-- Row 5: Sequential — rejected at step 2 -->
@@ -532,8 +537,9 @@
                 <span class="conn rejected"></span>
                 <span class="dot rejected"></span>
               </span>
-              <span class="progress-status red"><strong>Rejected</strong> · Returned to requester</span>
+              <span class="progress-status">Sequence 2 of 2 </span>
             </div>
+            <div><span class="pill pill-rejected">Rejected</span></div>
           </div>
 
         </div>

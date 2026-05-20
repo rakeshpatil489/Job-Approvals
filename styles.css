@@ -1099,7 +1099,7 @@
 
   /* Standard density columns */
   .list-std .list-head,
-  .list-std .list-row { grid-template-columns: 1.4fr 190px 220px 160px; gap: 20px; }
+  .list-std .list-row { grid-template-columns: 1.4fr 190px 220px 160px 110px; gap: 20px; }
 
   /* "Your turn" badge */
   .your-turn-tag { display: inline-flex; align-items: center; gap: 4px; background: var(--info-bg); color: var(--primary); padding: 1px 7px; border-radius: 3px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; margin-left: 8px; vertical-align: middle; }
@@ -1117,12 +1117,12 @@
 
   /* Dot abacus — matches reference design */
   .abacus { display: inline-flex; align-items: center; gap: 0; }
-  .abacus .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .abacus .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin: 3px; }
   .abacus .dot.done    { background: #2da44e; }
   .abacus .dot.current { background: #f5a623; }
-  .abacus .dot.pending { width: 9px; height: 9px; background: #d0d5dd; }
+  .abacus .dot.pending { width: 12px; height: 12px; background: #d0d5dd; }
   .abacus .dot.rejected { background: #d23f3f; }
-  .abacus .conn { width: 16px; height: 2px; background: #667085; flex-shrink: 0; }
+  .abacus .conn { width: 16px; height: 3px; background: #667085; flex-shrink: 0; }
   .abacus .conn.pending  { background: #d0d5dd; }
   .abacus .conn.rejected { background: #d23f3f; }
   .abacus .alt-slash { color: #98a2b3; font-size: 11px; padding: 0 3px; font-weight: 500; user-select: none; line-height: 1; }
