@@ -130,6 +130,11 @@
             <div class="ac-desc">One approval chain applies to all requisitions. Assign who must approve before a requisition moves to recruiting. The requisition form itself is set up and maintained by your softgarden team.</div>
           </div>
 
+          <div class="ac-list-notice">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Forms are set up and maintained by your softgarden team. To add, rename, or modify a form, <a href="#">Contact with Customer Success</a>
+            </div>
+
           <div class="ac-list">
 
             <div class="ac-list-head">
@@ -140,7 +145,7 @@
             </div>
 
             <!-- Standard default row -->
-            <div class="ac-row selected" onclick="selectFormRow(this)" data-form="standard-default">
+            <div class="ac-row" onclick="selectFormRow(this)" data-form="standard-default">
               <div>
                 <div class="ac-form-name">Standard Approval Form <span class="form-managed-tag"><svg width="9" height="9" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>managed</span></div>
                 <div class="ac-form-meta">Default for all requisitions · 62 requisitions</div>
@@ -173,7 +178,7 @@
                 </div>
               </div>
               <div style="text-align:right;">
-                <button class="btn btn-secondary btn-small" style="opacity:1;" onclick="openChainModal('standard-panf'); event.stopPropagation();">Configure chain</button>
+                <button class="btn btn-secondary btn-small" style="opacity:1;" onclick="openChainModal('standard-panf'); event.stopPropagation();">Configure</button>
               </div>
             </div>
 
@@ -233,12 +238,12 @@
             <div class="ac-desc">Assign approvers to each requisition form below. Form structure is set up and maintained by your softgarden team, only the approval chain assignments are configurable here.<br>Changes apply to future requisitions only.</div>
           </div>
 
-          <div class="ac-list">
-
-            <div class="ac-list-notice">
+          <div class="ac-list-notice">
               <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              Forms are set up and maintained by your softgarden team. To add, rename, or modify a form, <a href="#">contact your Customer Success Manager →</a>
+              Forms are set up and maintained by your softgarden team. To add, rename, or modify a form, <a href="#">Contact with Customer Success</a>
             </div>
+
+          <div class="ac-list">
 
             <div class="ac-list-head">
               <span>Form</span>
@@ -281,7 +286,7 @@
                 </div>
               </div>
               <div style="text-align:right;">
-                <button class="btn btn-secondary btn-small ac-edit-btn" onclick="openChainModal('standard-panf'); event.stopPropagation();">Configure chain</button>
+                <button class="btn btn-secondary btn-small ac-edit-btn" onclick="openChainModal('standard-panf'); event.stopPropagation();">Configure</button>
               </div>
             </div>
 
@@ -312,7 +317,7 @@
                 </div>
               </div>
               <div style="text-align:right;">
-                <button class="btn btn-secondary btn-small ac-edit-btn" onclick="openChainModal('panf-metacrew'); event.stopPropagation();">Configure chain</button>
+                <button class="btn btn-secondary btn-small ac-edit-btn" onclick="openChainModal('panf-metacrew'); event.stopPropagation();">Configure</button>
               </div>
             </div>
 
@@ -341,7 +346,7 @@
                 </div>
               </div>
               <div style="text-align:right;">
-                <button class="btn btn-secondary btn-small ac-edit-btn" onclick="openChainModal('panf-sg-service'); event.stopPropagation();">Configure chain</button>
+                <button class="btn btn-secondary btn-small ac-edit-btn" onclick="openChainModal('panf-sg-service'); event.stopPropagation();">Configure</button>
               </div>
             </div>
 
